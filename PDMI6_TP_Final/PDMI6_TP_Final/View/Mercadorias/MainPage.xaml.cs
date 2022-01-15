@@ -31,7 +31,13 @@ namespace PDMI6_TP_Final.View.Mercadorias
         }
         private void OnCreditos(object sender, EventArgs args)
         {
-            Navigation.PushAsync(new Creditos());
+            DisplayAlert("Créditos", "Aplicativo feito por:\n" +
+                "Alexia Ribeiro Marques - CB3002314\n" +
+                "Caio Costa Cordeiro - CB3001474", "OK");
+        }
+        private void OnCoords(object sender, EventArgs args)
+        {
+            DisplayAlert("Coordenadas", "Em Desenvolvimento", "OK");
         }
         private void OnMercadoriaTapped(object sender,
         ItemTappedEventArgs args)

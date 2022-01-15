@@ -17,9 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="View\Mercadorias\Creditos.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
     <EmbeddedResource Update="View\Mercadorias\DadosMercadoriaView.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

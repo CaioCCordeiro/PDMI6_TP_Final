@@ -35,18 +35,27 @@ namespace PDMI6_TP_Final.View.Mercadorias
         }
         public void OnSalvar(object sender, EventArgs args)
         {
-            PDMI6_TP_Final.Model.Mercadoria mercadoria = new
-            PDMI6_TP_Final.Model.Mercadoria()
+            if (string.IsNullOrEmpty(txtNome.Text) || string.IsNullOrWhiteSpace(txtNome.Text))
+                DisplayAlert("ERRO", "Nome não pode estar em branco", "OK");
+            else if (string.IsNullOrEmpty(txtNomeProdutor.Text) || string.IsNullOrWhiteSpace(txtNomeProdutor.Text))
+                DisplayAlert("ERRO", "Nome do Produtor não pode estar em branco", "OK");
+            else if (string.IsNullOrEmpty(txtNCM.Text) || string.IsNullOrWhiteSpace(txtNCM.Text))
+                DisplayAlert("ERRO", "Código NCM não pode estar em branco", "OK");
+            else
             {
-                Nome = txtNome.Text,
-                Peso = (float)Convert.ToDouble(txtPeso.Text),
-                NomeProdutor = txtNomeProdutor.Text,
-                EmailProdutor = txtEmailProdutor.Text,
-                NCM = (int)Convert.ToDouble(txtNCM.Text),
-                Id = mercadoriaId
-            };
-            App.MercadoriaModel.SalvarMercadoria(mercadoria);
-            Navigation.PopAsync();
+                PDMI6_TP_Final.Model.Mercadoria mercadoria = new
+                PDMI6_TP_Final.Model.Mercadoria()
+                {
+                    Nome = txtNome.Text,
+                    Peso = (float)Convert.ToDouble(txtPeso.Text),
+                    NomeProdutor = txtNomeProdutor.Text,
+                    EmailProdutor = txtEmailProdutor.Text,
+                    NCM = (int)Convert.ToDouble(txtNCM.Text),
+                    Id = mercadoriaId
+                };
+                App.MercadoriaModel.SalvarMercadoria(mercadoria);
+                Navigation.PopAsync();
+            }
         }
         public void OnDeletar(object sender, EventArgs args)
         {

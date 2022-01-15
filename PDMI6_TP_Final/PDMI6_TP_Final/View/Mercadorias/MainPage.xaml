@@ -12,6 +12,8 @@
                     Clicked="OnNovo" />
                 <Button x:Name="btnCreditos" Text="Créditos"
                     Clicked="OnCreditos" />
+                <Button x:Name="btnCoords" Text="Coordenadas"
+                    Clicked="OnCoords" />
             </StackLayout>
             <Label Text="Lista de Mercadorias" Font="18" />
             <ListView x:Name="lstMercadorias"
