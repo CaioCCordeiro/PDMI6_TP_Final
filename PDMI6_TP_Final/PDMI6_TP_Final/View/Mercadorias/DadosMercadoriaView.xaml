@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMI6_TP_Final.View.Mercadorias.DadosMercadoriaView">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <Entry x:Name="txtNome" Placeholder="Nome" />
+            <Entry x:Name="txtPeso" Placeholder="Peso" Keyboard="Numeric"/>
+            <Entry x:Name="txtNomeProdutor" Placeholder="Nome do Produtor" />
+            <Entry x:Name="txtEmailProdutor" Placeholder="E-mail do Produtor" Keyboard="Email"/>
+            <Entry x:Name="txtNCM" Placeholder="Código NCM" Keyboard="Numeric"/>
+            
+            <StackLayout Orientation="Horizontal">
+                <Button x:Name="btnSalvar" Text="Salvar" Clicked="OnSalvar" />
+                <Button x:Name="btnDeletar" Text="Apagar" Clicked="OnDeletar" />
+                <Button x:Name="btnFechar" Text="Fechar" Clicked="OnFechar" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

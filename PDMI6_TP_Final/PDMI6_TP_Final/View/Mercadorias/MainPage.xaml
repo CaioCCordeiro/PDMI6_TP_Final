@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PDMI6_TP_Final.View.Mercadorias.MainPage"
+             Title="Mercadorias">
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <StackLayout Orientation="Horizontal"
+                VerticalOptions="Center"
+                HorizontalOptions="Center">
+                <Button x:Name="btnNovo" Text="Novo"
+                    Clicked="OnNovo" />
+                <Button x:Name="btnCreditos" Text="Créditos"
+                    Clicked="OnCreditos" />
+            </StackLayout>
+            <Label Text="Lista de Mercadorias" Font="18" />
+            <ListView x:Name="lstMercadorias"
+                ItemsSource="{Binding Mercadorias}"
+                ItemTapped="OnMercadoriaTapped"
+                      HasUnevenRows="True">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Padding="5,0,5,0">
+                                <Label Text="{Binding Nome}" Font="14" />
+                                <Label Text="{Binding NomeProdutor}" Font="10" />
+                                <Label Text="{Binding NCM}" Font="10" />
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
